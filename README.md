@@ -1,6 +1,6 @@
 # Portfólio · Jhon Santos
 
-Site estático (HTML, CSS e JavaScript puros, sem build) publicado em https://jhon.braggo.com.br.
+Site estático (HTML, CSS e JavaScript puros, sem build) publicado em [https://jhon.braggo.com.br](https://jhon-portfolio.braggo.com.br/).
 
 - `index.html`: a página inteira, com estilos e scripts embutidos.
 - `img/`: prints dos projetos em WebP.
