@@ -7,4 +7,4 @@ Site estático (HTML, CSS e JavaScript puros, sem build) publicado em https://jh
 
 ## Publicação
 
-Cloudflare Pages ligado a este repositório: branch `main`, sem comando de build, diretório de saída `/`.
+Cloudflare Pages ligado a este repositório: branch `master`, sem comando de build, diretório de saída `/`.
