@@ -15,32 +15,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Big+Shoulders+Display:wght@800;900&family=Schibsted+Grotesk:wght@400;500;600&family=Fragment+Mono&display=swap">
 <style>
-/* Layout: hero com mapa de stack -> filtro de tecnologias que acende os projetos -> estudos de caso em duas colunas (história | engenharia) */
+/* Layout: topo com nome e números -> experiência -> estudos de caso em faixas separadas por linhas -> sobre -> contato. Tema único: preto e branco. */
 :root{
-  --bg:#f3f4f7; --surface:#ffffff; --surface-2:#eceef3; --ink:#141824; --ink-2:#4a5163; --ink-3:#7a8194;
-  --line:#dde0e8; --line-2:#c6cad6; --accent:#2b4fd8; --accent-soft:#e3e8fb;
-  --ok:#1d7a4f; --ok-soft:#dff2e8; --wip:#9a5b00; --wip-soft:#fbecd2;
-  --p-braggo:#b8741a; --p-braggo-soft:#f8ead6;
-  --p-bezalel:#0f7a6c; --p-bezalel-soft:#d9f1ec;
-  --p-dengue:#c2412d; --p-dengue-soft:#fbe3dd;
-  --p-espaco:#6a4bd1; --p-espaco-soft:#e9e3fb;
+  --bg:#000000; --surface:#0a0a0a; --surface-2:#161616; --ink:#ffffff; --ink-2:#bdbdbd; --ink-3:#8c8c8c;
+  --line:#1f1f1f; --line-2:#333333; --accent:#ffffff; --accent-soft:#1a1a1a;
+  --ok:#000000; --ok-soft:#ffffff; --wip:#ffffff; --wip-soft:transparent;
+  --p-braggo:#ffffff; --p-braggo-soft:#1a1a1a;
+  --p-bezalel:#ffffff; --p-bezalel-soft:#1a1a1a;
+  --p-dengue:#ffffff; --p-dengue-soft:#1a1a1a;
+  --p-espaco:#ffffff; --p-espaco-soft:#1a1a1a;
   --f-display:"Gloock", Georgia, "Times New Roman", serif;
   --f-sign:"Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
   --f-body:"Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
   --f-mono:"Fragment Mono", ui-monospace, Consolas, monospace;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0f121a; --surface:#171b26; --surface-2:#1f2431; --ink:#eef0f6; --ink-2:#b3b9c9; --ink-3:#808799;
-  --line:#272d3b; --line-2:#363d4f; --accent:#8ea4ff; --accent-soft:#1f2747;
-  --ok:#5fd19a; --ok-soft:#163327; --wip:#f0b45c; --wip-soft:#3a2a12;
-  --p-braggo:#e9a94f; --p-braggo-soft:#33260f; --p-bezalel:#4fd1bd; --p-bezalel-soft:#0f2e2a;
-  --p-dengue:#ff8a73; --p-dengue-soft:#3a1a14; --p-espaco:#ae98ff; --p-espaco-soft:#251d44; color-scheme:dark }}
-:root[data-theme="dark"]{
-  --bg:#0f121a; --surface:#171b26; --surface-2:#1f2431; --ink:#eef0f6; --ink-2:#b3b9c9; --ink-3:#808799;
-  --line:#272d3b; --line-2:#363d4f; --accent:#8ea4ff; --accent-soft:#1f2747;
-  --ok:#5fd19a; --ok-soft:#163327; --wip:#f0b45c; --wip-soft:#3a2a12;
-  --p-braggo:#e9a94f; --p-braggo-soft:#33260f; --p-bezalel:#4fd1bd; --p-bezalel-soft:#0f2e2a;
-  --p-dengue:#ff8a73; --p-dengue-soft:#3a1a14; --p-espaco:#ae98ff; --p-espaco-soft:#251d44; color-scheme:dark }
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--f-body);margin:0}
@@ -274,6 +263,27 @@ h1,h2,h3,.logo,.mark,.facts b,.mod b{font-weight:400!important;font-synthesis:no
 .mark{font-size:24px}
 @media (max-width:520px){.case-id h3,.job-head h3{font-size:34px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* preto e branco: destaque por tamanho, peso e linha, sem cor */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-top:1px solid var(--ink)}
+.facts b{font:900 48px/1 var(--f-sign)!important;letter-spacing:0}
+.facts small{font:12px var(--f-mono);letter-spacing:.04em;text-transform:uppercase;display:block;margin-top:6px}
+@media (max-width:480px){.facts b{font-size:38px!important}}
+.pill.wip{border:1px solid var(--ink)}
+.pill{text-transform:uppercase;letter-spacing:.06em}
+.case,.job{background:transparent;border:0;border-top:1px solid var(--line-2);border-radius:0}
+.case .eng{background:transparent}
+.case-top,.job-head{padding-left:0;padding-right:0}
+.story,.job-body{padding-left:0}
+.eng{padding-right:0}
+.links,.metrics-note{padding-left:0;padding-right:0}
+.metrics > div:first-child{padding-left:0}
+.case-id h3,.job-head h3{font-size:52px}
+@media (max-width:520px){.case-id h3,.job-head h3{font-size:38px}.story,.eng,.case-top,.job-head,.job-body{padding-left:0;padding-right:0}}
+.mark{background:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.to-top:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.contact{border-radius:0}
 </style>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
@@ -296,7 +306,7 @@ h1,h2,h3,.logo,.mark,.facts b,.mod b{font-weight:400!important;font-synthesis:no
     <div class="facts">
       <div><b>700+</b><small>commits em ERP em produção</small></div>
       <div><b>230+</b><small>agendamentos no Braggo</small></div>
-      <div><b>4</b><small>projetos autorais</small></div>
+      <div><b>2022</b><small>na área de tecnologia</small></div>
     </div>
   </div>
   <aside class="stackmap" aria-label="Resumo da stack">
